@@ -39,7 +39,7 @@ The idea is do a Monte Carlo simulation to solve some real problem using an Isin
 
 The idea here is to do this using an Ising Circuit. The equilibrium output of the circuit will be random solution that is in the correct solution space and therefore can be used directly in a probability calculation. To achieve this the Ising Circuit needs to be setup to reflect the desired distribution. This can be done directly analytically for small systems. For larger systems the circuit needs to be trained. Once the circuit has been setup correctly, it can be used to generate sample solutions for the simulation. The circuit is initiated with random input and let to relax to equilibrium. The equilibrium state will represent a random sample for the simulation.
 
-\subsection{Simulation steps}
+\subsection{Simulation outline}
 \begin{itemize}
 \item Generate many Random walks. Make sure they are NOT self avoiding and that they are unique.
 \item Use random walks to train Ising Model connection matrix, by translating them to spins and maximize Hamiltonian.
