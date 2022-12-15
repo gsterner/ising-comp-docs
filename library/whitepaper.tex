@@ -1,5 +1,5 @@
 \documentclass[11pt]{article}
-
+\usepackage{graphicx}
 % Margins
 \topmargin=-0.45in
 \evensidemargin=0in
@@ -38,6 +38,9 @@ For the sake of completeness, one should mention that the part of the simulation
 The idea is do a Monte Carlo simulation to solve some real problem using an Ising Circuit. Monte Carlo simulations are often used in cases where the probability distribution of the solution space is not known. One class of such methods are called Markov Chain Monte Carlo simulations. Where the desired distribution is constructed step wise using some predefined rules.
 
 The idea here is to do this using an Ising Circuit. The equilibrium output of the circuit will be random solution that is in the correct solution space and therefore can be used directly in a probability calculation. To achieve this the Ising Circuit needs to be setup to reflect the desired distribution. This can be done directly analytically for small systems. For larger systems the circuit needs to be trained. Once the circuit has been setup correctly, it can be used to generate sample solutions for the simulation. The circuit is initiated with random input and let to relax to equilibrium. The equilibrium state will represent a random sample for the simulation.
+
+The system used here to try this is the problem of the self avoiding random walk (SAWs). One way to study SAWs numerically is to do a random walk on a grid and generate as many walks as possible. When a large enough number of sample walks have been generated, several statistical properties of the walk can be calculated. E.g. the root-mean-square (RMS) distance. No points in the grid can ever intersect or the walk is not a SAW. So, when doing numerical simulations, one of the simplest approaches is to generate many random walks and only keep those that fulfill the SAW criteria of non-intersection.
+\includegraphics[scale=0.25]{images/saw_example.pdf}
 \subsection{Ising Model}
 \subsection{Self Avoiding Random Walk}
 \subsection{Simulation outline}
